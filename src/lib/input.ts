@@ -11,7 +11,7 @@ export const askPrismicCredentials = (): Credentials => {
       name: 'repository',
       type: 'input',
       message: 'Enter your Prismic repository name',
-      validate: function (value: string) {
+      validate: function(value: string) {
         if (value.length) {
           return true;
         } else {
@@ -23,7 +23,7 @@ export const askPrismicCredentials = (): Credentials => {
       name: 'apiToken',
       type: 'input',
       message: 'Enter your Prismic api token:',
-      validate: function (value: string) {
+      validate: function(value: string) {
         if (value.length) {
           return true;
         } else {
