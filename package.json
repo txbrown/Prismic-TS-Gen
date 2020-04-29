@@ -10,13 +10,16 @@
   "engines": {
     "node": ">=10"
   },
-  "bin": "dist/index.js",
+  "bin": {
+    "prismic-ts-gen": "dist/index.js"
+  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build && ./scripts/shebangify dist/index.js && chmod +x ./dist/index.js",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build"
+    "prepare": "tsdx build",
+    "install-global": "yarn global add file:$PWD"
   },
   "peerDependencies": {},
   "husky": {
@@ -37,6 +40,7 @@
     "@types/clear": "^0.1.0",
     "@types/configstore": "^4.0.0",
     "@types/figlet": "^1.2.0",
+    "@types/inquirer": "^6.5.0",
     "clear": "^0.1.0",
     "configstore": "^5.0.1",
     "figlet": "^1.4.0",
