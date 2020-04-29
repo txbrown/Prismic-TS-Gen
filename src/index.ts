@@ -23,8 +23,8 @@ const main = async () => {
     clearItem(REPO_KEY);
   }
 
-  if (!store.get(TOKEN_KEY) || store.get(REPO_KEY)) {
-    const creds = askPrismicCredentials();
+  if (!store.get(TOKEN_KEY) || !store.get(REPO_KEY)) {
+    const creds = await askPrismicCredentials();
     store.set(TOKEN_KEY, creds.apiToken);
     store.set(REPO_KEY, creds.repository);
   }
@@ -36,7 +36,7 @@ const main = async () => {
     if (argv.o) {
       outputPath = argv.o;
     } else {
-      outputPath = `./${docType}.ts`;
+      outputPath = `./prismic-types/${docType}.ts`;
     }
 
     const response = await prismicService.getDocumentByType(docType);

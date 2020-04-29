@@ -5,7 +5,7 @@ interface Credentials {
   repository: string;
 }
 
-export const askPrismicCredentials = (): Credentials => {
+export const askPrismicCredentials = async (): Promise<Credentials> => {
   const questions = [
     {
       name: 'repository',
